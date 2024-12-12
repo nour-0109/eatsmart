@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu NCOOPS</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2c3e50; /* Fond bleu foncé moderne */
+            color: #ecf0f1; /* Texte clair pour un meilleur contraste */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1abc9c; /* Couleur vibrante pour le titre */
+        }
+
+        .menu-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #34495e; /* Fond légèrement plus foncé pour les sections */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Ombre pour donner de la profondeur */
+        }
+
+        .menu-section h2 {
+            border-bottom: 2px solid #1abc9c; /* Soulignement stylisé pour les sous-titres */
+            padding-bottom: 10px;
+            color: #ecf0f1;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .menu-item .name {
+            font-weight: bold;
+            color: #ecf0f1; /* Texte principal des plats */
+        }
+
+        .menu-item .price {
+            color: #bdc3c7; /* Gris clair pour les prix */
+        }
+
+        .menu-description {
+            font-size: 14px;
+            color: #95a5a6; /* Gris doux pour les descriptions des plats */
+            margin-top: 5px;
+        }
+
+        img {
+            margin-top: 10px;
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            transition: transform 0.3s; /* Effet de zoom au survol */
+        }
+
+        img:hover {
+            transform: scale(1.05); /* Zoom léger pour attirer l'attention */
+        }
+
+        .nav {
+            text-align: center;
+            margin-bottom: 20px; /* Espacement entre la navigation et le contenu */
+        }
+
+        .nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #1abc9c; /* Couleur des liens */
+            font-weight: bold;
+            transition: color 0.3s; /* Transition douce pour les liens */
+        }
+
+        .nav a:hover {
+            color: #ecf0f1; /* Couleur au survol des liens */
+        }
+
+        @media (min-width: 600px) {
+            img {
+                width: 150px;
+                height: 100px; /* Dimensions adaptées pour les écrans plus larges */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>NCOOPS</h1>
+
+    <div class="nav">
+        <a href="menuNcoops.hmtl">Menu</a> <!-- Lien vers la page du menu -->
+        <a href="contact.php">Contact</a> <!-- Lien vers la page de contact -->
+    </div>
+
+    <div class="menu-section">
+        <h2>Antipasti</h2> <!-- Section pour les antipasti -->
+        <div class="menu-item">
+            <span class="name">Involtini de Speck</span> <!-- Nom du plat -->
+            <span class="price">5,00 €</span> <!-- Prix du plat -->
+        </div>
+        <img src="https://img.passeportsante.net/1200x675/2023-04-04/ant.webp" alt="Involtini de Speck"> <!-- Image du plat -->
+        <div class="menu-description">Jambon speck, ricotta</div> <!-- Description du plat -->
+    </div>
+
+    <div class="menu-section">
+        <h2>Bruschetta</h2> <!-- Section pour les bruschettas -->
+        <div class="menu-item">
+            <span class="name">Bruschetta Végétarienne</span>
+            <span class="price">9,50 €</span>
+        </div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwYGXBQWeOKFwYsS8Xh1GQqgfSeMwXkDA2_w&s" alt="Bruschetta Végétarienne">
+        <div class="menu-description">Coulis de tomates, aubergines, tomates confites, champignons, poivrons, mozzarella</div>
+
+        <div class="menu-item">
+            <span class="name">Bruschetta Saumone</span>
+            <span class="price">9,50 €</span>
+        </div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWudThQ89T0Q4CoBLqAEqgA5FLrwtuTcUYbA&s" alt="Bruschetta Saumone">
+        <div class="menu-description">Crème fraîche, saumon fumé, mozzarella</div>
+    </div>
+
+    <div class="menu-section">
+        <h2>Pizzas</h2> <!-- Section pour les pizzas -->
+        <div class="menu-item">
+            <span class="name">Pizza Verdi</span>
+            <span class="price">9,00 €</span>
+        </div>
+        <img src="https://www.adeline-cuisine.fr/wp-content/uploads/2017/07/pizza-jambon-cru-tomate-mozzarella-recette-facile-678x508.jpg" alt="Pizza Verdi">
+        <div class="menu-description">Coulis de tomates, jambon supérieur, mozzarella, origan</div>
+
+        <div class="menu-item">
+            <span class="name">Pizza Napoletana</span>
+            <span class="price">9,00 €</span>
+        </div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYX68OPnR1b3IHe1YSh2BndekQl2mMEh8jGg&s" alt="Pizza Napoletana">
+        <div class="menu-description">Coulis de tomates, anchois, câpres, origan</div>
+    </div>
+
+    <div class="menu-section">
+        <h2>Pasta</h2> <!-- Section pour les pâtes -->
+        <div class="menu-item">
+            <span class="name">Pasta alla Bolognese</span>
+            <span class="price">7,50 €</span>
+        </div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzXCv9iFgU3UOoFLknuCB5nEF8_37U3zYXkg&s" alt="Pasta alla Bolognese">
+        <div class="menu-description">Sauce tomate, viande hachée de bœuf, tomates, oignons</div>
+
+        <div class="menu-item">
+            <span class="name">Lasagne Bolognese</span>
+            <span class="price">9,00 €</span>
+        </div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF8CGRmcJd9zoDuGSm6Y8yPf18AYlUesFWaw&s" alt="Lasagne Bolognese">
+        <div class="menu-description">Pâte, Béchamel, sauce bolognaise, crème fraîche, mozzarella</div>
+    </div>
+
+    <div class="menu-section">
+        <h2>Dolce</h2> <!-- Section pour les desserts -->
+        <div class="menu-item">
+            <span class="name">Pantofola Chocolat</span>
+            <span class="price">3,00 €</span>
+        </div
