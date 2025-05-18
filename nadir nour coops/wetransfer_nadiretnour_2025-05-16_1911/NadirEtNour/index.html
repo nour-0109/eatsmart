@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIPA-MIBLU - Restaurant</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>MIPA-MIBLU</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#accueil" class="active">Accueil</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="panier.html">Panier</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h2>Bienvenue chez MIPA-MIBLU</h2>
+            <p>Découvrez notre cuisine italienne authentique</p>
+            <a href="#menu" class="btn">Voir le menu</a>
+        </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+        <h2>Notre Menu</h2>
+        <div class="menu-categories">
+            <button class="category-btn active" data-category="antipasti">Antipasti</button>
+            <button class="category-btn" data-category="pizza">Pizza</button>
+            <button class="category-btn" data-category="pasta">Pasta</button>
+            <button class="category-btn" data-category="dolce">Dolce</button>
+        </div>
+        <div class="menu-items-container">
+            <!-- Les éléments du menu seront chargés dynamiquement ici -->
+        </div>
+    </section>
+
+
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Notre Adresse</h3>
+                        <p>123 Rue de la Gastronomie, 75000 Paris</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Téléphone</h3>
+                        <p>01 23 45 67 89</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Horaires d'ouverture</h3>
+                        <p>Lundi - Dimanche, 11h00 - 23h00</p>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916256937595!2d2.292292615509614!3d48.85836507928746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sTour%20Eiffel!5e0!3m2!1sfr!2sfr!4v1620134896379!5m2!1sfr!2sfr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>MIPA-MIBLU</h2>
+                    <p>Cuisine italienne authentique</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Liens rapides</h3>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="panier.html">Panier</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Rue de la Gastronomie, 75000 Paris</p>
+                    <p><i class="fas fa-phone-alt"></i> 01 23 45 67 89</p>
+                    <p><i class="fas fa-envelope"></i> contact@mipa-miblu.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MIPA-MIBLU. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    
+    <!-- Scripts personnalisés -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/cart.js"></script>
+    
+    <!-- Script de démarrage -->
+    <script>
+        // Fonction pour initialiser l'application après le chargement de la page
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Application MIPA-MIBLU démarrée');
+            
+            // Afficher un message pour indiquer que l'application fonctionne en mode démo
+            console.log('Application en mode démo - Firebase non configuré');
+            
+            // Forcer l'initialisation du menu avec les données locales
+            setTimeout(function() {
+                // S'assurer que les éléments du DOM sont chargés
+                menuItemsContainer = document.querySelector('.menu-items-container');
+                if (menuItemsContainer) {
+                    // Afficher les articles de la catégorie par défaut
+                    const filteredItems = menuData.filter(item => item.category === 'antipasti');
+                    renderMenuItems(filteredItems);
+                    
+                    // Activer le premier bouton par défaut
+                    const firstCategoryBtn = document.querySelector('.category-btn[data-category="antipasti"]');
+                    if (firstCategoryBtn) {
+                        firstCategoryBtn.classList.add('active');
+                    }
+                    
+                    // Configurer les boutons de catégorie
+                    setupCategoryButtons();
+                }
+            }, 500);
+        });
+    </script>
+</body>
+</html>
